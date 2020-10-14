@@ -2,6 +2,26 @@
  * YOUR CODE HERE *
  ******************/
 
+const addAll = function (nums) {
+  let num = 0;
+  for (const items of nums) {
+    // console.log(items)
+    num = num + items;
+  }
+  return num;
+  
+}
+addAll([1, 2, 3, 4, 5])
+
+function addsAll(num){
+  let number = 0;
+  for (i = 0; i < num.length; i++){
+    number = number + num[i]
+    // console.log(num[i]) 
+  }
+  
+}
+addsAll([2, 4, 6, 8]);
 
 
 
