@@ -2,31 +2,160 @@
  * YOUR CODE HERE *
  ******************/
 
-const addAll = function (nums) {
-  let num = 0;
-  for (const items of nums) {
+// reduce:
+// *takes a collection 
+// *returns ONE Value
+// [5, 8, 14,]  --> 27
+ const addAll = function (nums) {
+  let total = 0;
+  for (const currentNum of nums) {   // <--same as - const currentNum = nums[i];
     // console.log(items)
-    num = num + items;
+    total = total + currentNum;
   }
-  return num;
+  return total;
   
 }
 addAll([1, 2, 3, 4, 5])
+// below is an example of the same as above but as a for-loop
 
-function addsAll(num){
-  let number = 0;
-  for (i = 0; i < num.length; i++){
-    number = number + num[i]
-    // console.log(num[i]) 
+// function addsAll(num){
+//   let number = 0;
+//   for (i = 0; i < num.length; i++){
+//     number = number + num[i]
+//     // console.log(num[i]) 
+//   }
+  
+// }
+// addsAll([2, 4, 6, 8]);
+
+
+const countSpaces = function (sentence) {
+  let count = 0;
+
+  for (const char of sentence) {
+    if (char === ' ') {
+      count = count + 1;
+    }
+  }
+  return count;
+}
+
+const countTrues = function (bools) {
+  let count = 0;
+
+  for (const bool of bools) {
+    if (bool === true) {
+      count = count +1;
+    }
+  }
+  return(count);
+}
+
+const makeFriendly = function (paragraph) {
+  let friendly = '';
+  
+  for (const letter of paragraph) {
+    if (letter === '.') {
+      friendly = friendly + '!';
+    } else {
+      friendly = friendly + letter;
+
+    }
+  }
+  return friendly;
+    
+  }
+
+  const cubeAll = function(nums) {
+    let cubes = [];
+  
+    for (const num of nums) {
+      cubes.push(num ** 3);
+    }
+  
+    return cubes;
+  }
+
+const addNoises = function(animals) {
+  const animalsWithNoises = [];
+  
+  for (const animal of animals) {
+    if (animal === 'Fido' || animal === 'Rolph' || animal === 'Maisie') {
+        animalsWithNoises.push(animal + ' says "Woof!"');
+    } else if (animal === 'Garfield' || animal === 'Heathcliff') {
+        animalsWithNoises.push(animal + ' says "Meow!"');
+    } else if (animal === 'Barnie' || animal === 'Sharp Tooth') {
+        animalsWithNoises.push(animal + ' says "ROWR."');
+    }
   }
   
+    return animalsWithNoises;
+  }
+
+const addNoisesAlt = function(animals) {
+  const animalsWithNoises = [];
+
+  const dogs = [
+    'Fido',
+    'Rolph',
+    'Maisie',
+  ];
+
+  const cats = [
+    'Garfield',
+    'Heathcliff',
+  ]
+
+  const dinos = [
+    'Barnie',
+    'Sharp Tooth',
+  ]
+
+  for (const animal of animals) {
+    if (dogs.includes(animal)) {
+      animalsWithNoises.push(animal + ' says "Woof!"');
+    } else if (cats.includes(animal)) {
+      animalsWithNoises.push(animal + ' says "Meow!"');
+    } else if (dinos.includes(animal)) {
+      animalsWithNoises.push(animal + ' says "ROWR."');
+    }
+  }
+
+  return animalsWithNoises;
 }
-addsAll([2, 4, 6, 8]);
 
+// const womenOnly = function(people) {
+//   const result = [];
 
+//   for (const person of people) {
+//     if (person[person.length - 1] === 'F') {
+//       result.push(person);
+//     }
+//   }
 
+  const womenOnly = function(people) {
+    const result = [];
+  
+    for (const person of people) {
+      if (person.endsWith('F')) {
+        result.push(person);
+      }
+    }
 
+  return result;
+}
 
+const integersOnly = function(nums) {
+  const result = [];
+
+  for (const num of nums) {
+    if (num % 1 === 0) {
+      result.push(num);
+    }
+  }
+
+  return result;
+}
 
 /*********************************
  * OUR CODE BELOW; DO NOT TOUCH! *
